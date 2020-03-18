@@ -1,5 +1,6 @@
 package net.aquanite.teamchat;
 
+import net.aquanite.teamchat.commands.autoLoginCommand;
 import net.aquanite.teamchat.commands.tcCommand;
 import net.aquanite.teamchat.listener.DisconnectListener;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
@@ -23,6 +24,7 @@ public class TeamChat extends Plugin {
         instance = this;
         System.out.println("Das Teamchat-System wurde hochgefahren und aktiviert!");
         this.getProxy().getPluginManager().registerCommand(this, new tcCommand());
+        this.getProxy().getPluginManager().registerCommand(this, new autoLoginCommand());
         this.getProxy().getPluginManager().registerListener(this, new DisconnectListener());
     }
 
